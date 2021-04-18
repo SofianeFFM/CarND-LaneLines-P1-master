@@ -32,12 +32,17 @@ The goals / steps of this project are the following:
 My pipeline consisted of 5 steps. 
 
 Step 1: I converted the images to grayscale.
+
 Step 2: I applied gaussian smoothing to reduce noise as Canny filter is very sensitive to noise. 
+
 Step 3: I apllied Canny filter. As I struggled with the values, I looked if there's a way to auto calculate it. 
+
 		One of the methos was AutoCanny from this link: https://www.pyimagesearch.com/2015/04/06/zero-parameter-automatic-canny-edge-detection-with-python-and-opencv/
-		As the sample images and videos are token in good conditions with "clear" edges, this function can help. In other circumstances 
-		a more powerful method should be adopted.
+		
+		As the sample images and videos are token in good conditions with "clear" edges, this function can help. In other circumstances a more powerful method should be adopted.
+		
 Step 4: Define a region of interest. This should "reproduce" the angle view of the driver and set the focus on the Lane.
+
 Step 5: Run Hough and draw the lines.
 
 
@@ -59,12 +64,15 @@ Below is he output of the processed images:
 
 
 One potential shortcoming would be what would happen when we have bad weather or not enough sharpness or brightness of the images.
+
 Curves, haveing two lines close to each other on one side (for example by repair/construction) could "confuse" the pipeline.
 
 ### 3. Suggest possible improvements to your pipeline
 
 A possible improvement would be to use automated functions to calculate the parameters of canny and hough.
+
 It's also mandatory to split the image in two halfs and ignore the lines that have the same slope from the other half. Otherwise the calculation of the averga e can be heavily affected.
+
 It's also better to use 2nd grade polynomial functions instead of 1st grad ones to obtain better results on curves. 
 
 Another potential improvement could be another approach!
